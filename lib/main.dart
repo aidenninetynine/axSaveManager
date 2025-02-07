@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_breaks
+
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -91,41 +93,32 @@ class HomePage extends StatelessWidget {
           onTap: () {
              Navigator.push(context, MaterialPageRoute<void>(
                 builder: (BuildContext context) {
-                  return Scaffold(
-                    appBar: AppBar(title: const Text('UNDERTALE')),
-                    body: Stack(
-                      children: <Widget>[
-                        // Center Button (as before)
-                        Center(child: Text("Testing")),
-
-                        // Bottom-Right Button using Align
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Padding( // Optional padding with Align
-                            padding: const EdgeInsets.all(16.0),
-                            child: Card(
-                              clipBehavior: Clip.hardEdge,
-                              child: InkWell(
-                                splashColor: Colors.red.withAlpha(30),
-                                onTap: () {
-
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Row(mainAxisSize: MainAxisSize.min, children: [Padding(
-                                    padding: const EdgeInsets.only(right: 8),
-                                    child: Icon(Icons.add),
-                                  ),Text("New save")],)
-                                )
-                              )
-                            )
-                          ),
+                  return DefaultTabController(initialIndex: 1, length: 2, child:
+                    Scaffold(
+                      appBar: AppBar(
+                        title: const Text('UNDERTALE'),
+                        bottom: const TabBar(
+                          tabs: <Widget>[
+                            Tab(
+                              text: "Saves",
+                              icon: Icon(Icons.save)
+                            ),
+                            Tab(
+                              text: "Instances",
+                              icon: Icon(Icons.gamepad)
+                            ),
+                          ]
                         ),
-                      ],
+                      ),
+                      body: TabBarView(
+                        children: [
+                          GameUndertaleSavePage(),
+                          GameUndertaleGamePage(),
+                        ]
+                      )
                     )
-                                          
                   );
-                },
+                  },
               ));
           },
           child: Padding(
@@ -138,4 +131,83 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class GameUndertaleSavePage extends StatelessWidget {
+  const GameUndertaleSavePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        // Center Button (as before)
+        Center(child: Text("Testing")),
+    
+        // Bottom-Right Button using Align
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Padding( // Optional padding with Align
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              child: InkWell(
+                splashColor: Colors.red.withAlpha(30),
+                onTap: () {
+    
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: Icon(Icons.add),
+                  ),Text("New save")],)
+                )
+              )
+            )
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class GameUndertaleGamePage extends StatelessWidget {
+  const GameUndertaleGamePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        // Center Button (as before)
+        Center(child: Text("Testing")),
+    
+        // Bottom-Right Button using Align
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Padding( // Optional padding with Align
+            padding: const EdgeInsets.all(16.0),
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              child: InkWell(
+                splashColor: Colors.red.withAlpha(30),
+                onTap: () {
+    
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: Icon(Icons.add),
+                  ),Text("New save")],)
+                )
+              )
+            )
+          ),
+        ),
+      ],
+    );
+  }
+}
 
