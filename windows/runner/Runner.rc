@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "Aiden99 Software" "\0"
             VALUE "FileDescription", "axsavemanager" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "axsavemanager" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 Aiden99. All rights reserved." "\0"
             VALUE "OriginalFilename", "axsavemanager.exe" "\0"
             VALUE "ProductName", "axsavemanager" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
